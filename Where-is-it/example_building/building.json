@@ -1,0 +1,35 @@
+{
+	"name": "Test building",
+	"types_area": [
+		{
+			"type": "room",
+			"color": "44df7e"
+		},
+		{
+			"type": "hall",
+			"color": "81acda"
+		}
+	],
+	"levels": [
+		{
+			"id": 1,
+			"areas": [
+				{
+					"id": 0,
+					"name": "Room 1",
+					"type": "room"
+				},
+				{
+					"id": 1,
+					"name": "Room 2",
+					"type": "room"
+				},
+				{
+					"id": 2,
+					"name": "Hall",
+					"type": "hall"
+				}
+			]
+		}
+	]
+}
