@@ -43,6 +43,15 @@ func test_slot(viewport: Node, event: InputEvent, shape_idx: int, name: String):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			print("Test: " + name)
+			var t = $Building.find_node(name).find_node('CollisionShape2D')
+			var t2 = $Building.to_global(t.position)
+			print(event.position)
+			
+			print(t2)
+			
+#			$Camera2D.position = event.position
+			print($Camera2D.position)
+			
 
 
 
