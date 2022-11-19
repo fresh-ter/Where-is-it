@@ -16,18 +16,18 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("ui_left"):
 #		print($Node2D.position)
-		$Building.translate(Vector2(5,0)*speed*delta)
+		$Camera2D.translate(Vector2(-5,0)*speed*delta)
 	if Input.is_action_pressed("ui_right"):
-		$Building.translate(Vector2(-5,0)*speed*delta)
+		$Camera2D.translate(Vector2(5,0)*speed*delta)
 	if Input.is_action_pressed("ui_up"):
-		$Building.translate(Vector2(0,5)*speed*delta)
+		$Camera2D.translate(Vector2(0,-5)*speed*delta)
 	if Input.is_action_pressed("ui_down"):
-		$Building.translate(Vector2(0,-5)*speed*delta)
+		$Camera2D.translate(Vector2(0,5)*speed*delta)
 	
-	if Input.is_action_just_pressed("map_zoom_in"):
-		$Building.apply_scale(Vector2(1,1)*speed_scale*delta)
-	if Input.is_action_just_pressed("map_zoom_out"):
-		$Building.apply_scale(Vector2(0.5,0.5)*speed_scale*delta)
+#	if Input.is_action_just_pressed("map_zoom_in"):
+#		$Building.apply_scale(Vector2(1,1)*speed_scale*delta)
+#	if Input.is_action_just_pressed("map_zoom_out"):
+#		$Building.apply_scale(Vector2(0.5,0.5)*speed_scale*delta)
 
 
 func test():
