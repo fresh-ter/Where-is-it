@@ -14,7 +14,9 @@ func _ready():
 	test()
 	get_building_data()
 	print(building_data)
-	$Camera2D/CanvasLayer/UI/MenuButton.get_popup().add_item("Legends")
+	$Camera2D/CanvasLayer/UI/MenuButton.get_popup().add_item("Legend")
+	$Camera2D/CanvasLayer/UI/MenuButton.get_popup().add_item("Info")
+	$Camera2D/CanvasLayer/UI/MenuButton.get_popup().connect('id_pressed', self, 'on_menu_id_pressed')
 	pass # Replace with function body.
 	
 #	$Map.apply_scale(Vector2(0.1,0.1))
@@ -84,3 +86,20 @@ func _on_VSlider_value_changed(value):
 	$Camera2D.zoom = Vector2(value, value)
 #	$Building.scale = Vector2(value, value)
 	pass # Replace with function body.
+
+func on_menu_id_pressed(id: int):
+	print("Menu", id)
+	
+	if id == 0:
+		var vbox = $Camera2D/CanvasLayer/UI/WindowDialog/VBoxContainer
+		
+		for x in building_data["types_area"]:
+			var new_hbox = $Camera2D/CanvasLayer/UI/WindowDialog/VBoxContainer/HBoxContainer.duplicate()
+			new_hbox.get_node("Label").text = x["type"]
+			new_hbox.get_node("ColorRect").color = Color(x["color"])
+			
+			vbox.add_child(new_hbox)
+		
+		$Camera2D/CanvasLayer/UI/WindowDialog/VBoxContainer/HBoxContainer.visible = false
+			
+		$Camera2D/CanvasLayer/UI/WindowDialog.popup_centered()
