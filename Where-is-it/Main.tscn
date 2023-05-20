@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://example_building/Building.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,83 +15,4 @@ current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
-[node name="UI" type="Control" parent="Camera2D/CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer/UI"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -20.0
-margin_top = 12.0
-margin_right = 20.0
-margin_bottom = 26.0
-text = "Map"
-
-[node name="VSlider" type="VSlider" parent="Camera2D/CanvasLayer/UI"]
-margin_left = 886.0
-margin_top = 179.0
-margin_right = 983.0
-margin_bottom = 364.0
-focus_mode = 0
-min_value = 0.1
-max_value = 2.0
-step = 0.1
-value = 1.0
-
-[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/UI"]
-margin_left = 22.0
-margin_top = 414.0
-margin_right = 218.0
-margin_bottom = 578.0
-color = Color( 0.298039, 0.298039, 0.298039, 0.862745 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/CanvasLayer/UI/ColorRect"]
-margin_right = 191.0
-margin_bottom = 156.0
-text = "test"
-
-[node name="MenuButton" type="MenuButton" parent="Camera2D/CanvasLayer/UI"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 133.0
-margin_bottom = 59.0
-text = "Menu"
-
-[node name="WindowDialog" type="WindowDialog" parent="Camera2D/CanvasLayer/UI"]
-margin_right = 192.0
-margin_bottom = 120.0
-window_title = "Color Legend"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/UI/WindowDialog"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 184.0
-margin_bottom = 112.0
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/UI/WindowDialog/VBoxContainer"]
-margin_top = 45.0
-margin_right = 176.0
-margin_bottom = 59.0
-alignment = 1
-
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer/UI/WindowDialog/VBoxContainer/HBoxContainer"]
-margin_right = 50.0
-margin_bottom = 14.0
-text = "testtest"
-
-[node name="MarginContainer" type="MarginContainer" parent="Camera2D/CanvasLayer/UI/WindowDialog/VBoxContainer/HBoxContainer"]
-margin_left = 54.0
-margin_right = 113.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-
-[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/UI/WindowDialog/VBoxContainer/HBoxContainer"]
-margin_left = 117.0
-margin_right = 176.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-
-[connection signal="value_changed" from="Camera2D/CanvasLayer/UI/VSlider" to="." method="_on_VSlider_value_changed"]
+[node name="UI" parent="Camera2D/CanvasLayer" instance=ExtResource( 3 )]

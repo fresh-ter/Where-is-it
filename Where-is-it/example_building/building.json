@@ -30,6 +30,41 @@
 					"type": "hall"
 				}
 			]
+		},
+		{
+			"id": 2,
+			"areas": [
+				{
+					"id": 0,
+					"name": "Room 1",
+					"type": "room"
+				},
+				{
+					"id": 1,
+					"name": "Room 2",
+					"type": "room"
+				},
+				{
+					"id": 2,
+					"name": "Room 3",
+					"type": "room"
+				},
+				{
+					"id": 3,
+					"name": "Room 4",
+					"type": "room"
+				},
+				{
+					"id": 4,
+					"name": "Room 5",
+					"type": "room"
+				},
+				{
+					"id": 5,
+					"name": "Room 6",
+					"type": "room"
+				}
+			]
 		}
 	]
 }
